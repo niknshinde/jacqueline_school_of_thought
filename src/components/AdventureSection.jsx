@@ -256,7 +256,7 @@ const AdventureSection = () => {
       icon: <SafariIcon />,
       title: "Jungle Safari",
       description: "A jeep ride & a hike through verdant forests. Waterfalls, birdsong, & the thrill of the wild!",
-      link: '/safari',
+      link: '/hilltop',
     },
     {
       image: '/images/campsite.webp',

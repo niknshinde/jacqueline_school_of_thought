@@ -61,6 +61,13 @@ const Navbar = () => {
     if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  // This is the key function - closing the mobile menu when any link is clicked
+  const handleNavLinkClick = () => {
+    if (windowWidth < 900) {
+      setMobileOpen(false);
+    }
+  };
+
   // Render nav link with hover effects
   const renderNavLink = (to, label, exact = false, idx, isAnchor = false) => {
     if (isAnchor) {
@@ -68,7 +75,10 @@ const Navbar = () => {
         <a
           href="/#experiences-overview"
           className="nav-link"
-          onClick={handleAnchorClick}
+          onClick={(e) => {
+            handleAnchorClick(e);
+            handleNavLinkClick();
+          }}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -87,6 +97,7 @@ const Navbar = () => {
         to={to}
         className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
         end={exact}
+        onClick={handleNavLinkClick}
         onMouseEnter={() => setHoveredIndex(idx)}
         onMouseLeave={() => setHoveredIndex(null)}
       >
@@ -109,9 +120,9 @@ const Navbar = () => {
           <Link
             to="/"
             className="logo-container"
-            onClick={() => setMobileOpen(false)}
+            onClick={handleNavLinkClick}
           >
-            <img src="/public/images/logo.png" alt="JSOT Logo" className="logo" />
+            <img src="/images/logo.png" alt="JSOT Logo" className="logo" />
           </Link>
 
           <div className={`menu-toggle ${mobileOpen ? 'active' : ''}`} onClick={() => setMobileOpen(!mobileOpen)}>
@@ -134,7 +145,7 @@ const Navbar = () => {
               <Link
                 to="/book"
                 className="cta-button"
-                onClick={() => setMobileOpen(false)}
+                onClick={handleNavLinkClick}
               >
                 <span>Book Now</span>
                 <svg className="cta-arrow" viewBox="0 0 24 24" width="18" height="18">
@@ -222,7 +233,7 @@ const Navbar = () => {
         }
 
         .logo {
-          height: 48px;
+          height: 70px;
           transition: transform 0.3s ease, filter 0.3s ease;
           filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
           border-radius: 10px;
@@ -409,6 +420,16 @@ const Navbar = () => {
         .nav-overlay.active {
           opacity: 1;
           visibility: visible;
+        }
+
+        /* Add margin to main content so it's not hidden by navbar */
+        main {
+          margin-top: var(--navbar-height);
+        }
+        @media (max-width: 900px) {
+          main {
+            margin-top: var(--navbar-height-mobile);
+          }
         }
 
         /* Responsive styles */

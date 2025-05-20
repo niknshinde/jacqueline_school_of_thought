@@ -10,6 +10,7 @@ import LakesidePage from './pages/LakesidePage';
 import HilltopPage from './pages/HilltopPage';
 import SafariPage from './pages/SafariPage';
 import CampsitePage from './pages/CampsitePage';
+import AdventureSection from './components/AdventureSection';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/hilltop" element={<HilltopPage />} />
         <Route path="/safari" element={<SafariPage />} />
         <Route path="/campsite" element={<CampsitePage />} />
+        <Route path="/adventures" element={<AdventureSection/>} />
+
       </Routes>
       <Footer />
     </>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const EnhancedGlampingHero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -218,6 +220,7 @@ const EnhancedGlampingHero = () => {
             transitionDelay: '0.6s',
             outline: 'none',
           }}
+          onClick={() => navigate('/book')}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'scale(1.07)';
             e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.3)';

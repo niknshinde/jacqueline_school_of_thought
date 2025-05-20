@@ -4,33 +4,38 @@ const BookPage = () => {
   const agodaLink = "https://www.agoda.com/en-in/jackuline-school-of-thought/hotel/all/kolvan-in.html?countryId=35&finalPriceView=1&isShowMobileAppPrice=false&cid=1844104&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2025-05-23&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false¤cyCode=INR&isFreeOccSearch=false&los=1&searchrequestid=39022fe9-84b4-4566-b485-97765c4da483&ds=fTsa6qaO%2F4TpstZO";
 
   const pageStyle = {
-    padding: '100px 20px 40px 20px',
+    padding: '80px 10px 40px 10px',
     minHeight: 'calc(100vh - 80px)',
     background: 'linear-gradient(120deg, #e8f5e9 0%, #f1f8e9 100%)',
+    overflowX: 'hidden', // Prevent horizontal scrolling
+    width: '100%',
+    boxSizing: 'border-box',
   };
 
   const headingStyle = {
-    fontSize: 'clamp(2.2rem, 5vw, 3.2rem)',
+    fontSize: 'clamp(1.8rem, 5vw, 3rem)',
     color: '#2e7d32',
     textAlign: 'center',
-    marginBottom: '48px',
+    marginBottom: '32px',
     fontWeight: '900',
-    letterSpacing: '2px',
+    letterSpacing: '1px',
+    padding: '0 10px',
     fontFamily: "'Montserrat', 'Segoe UI', Arial, sans-serif",
     textShadow: '0 2px 12px #fff, 0 2px 12px #e0f7fa',
   };
 
   const cardsContainerStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-    gap: '38px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gap: '20px',
     maxWidth: '1200px',
     margin: '0 auto',
+    padding: '0 5px',
   };
 
   const cardStyle = (isExceeded) => ({
     background: 'rgba(255,255,255,0.97)',
-    borderRadius: '18px',
+    borderRadius: '16px',
     boxShadow: isExceeded
       ? '0 4px 24px rgba(46, 125, 50, 0.10), 0 1.5px 8px rgba(46, 125, 50, 0.08)'
       : '0 8px 32px rgba(46, 125, 50, 0.12), 0 1.5px 8px rgba(46, 125, 50, 0.08)',
@@ -43,44 +48,48 @@ const BookPage = () => {
     position: 'relative',
     zIndex: 1,
     backdropFilter: 'blur(1.2px)',
+    width: '100%',
+    maxWidth: '100%',
+    margin: '0 auto',
   });
 
   const cardHeaderStyle = {
     background: 'linear-gradient(90deg, #81c784 60%, #c8e6c9 100%)',
     color: '#1b5e20',
-    padding: '12px 18px',
+    padding: '10px',
     fontWeight: 'bold',
-    fontSize: '1rem',
+    fontSize: '0.9rem',
     textAlign: 'center',
-    letterSpacing: '1px',
-    borderTopLeftRadius: '18px',
-    borderTopRightRadius: '18px',
+    letterSpacing: '0.5px',
+    borderTopLeftRadius: '16px',
+    borderTopRightRadius: '16px',
     boxShadow: '0 2px 8px rgba(129,199,132,0.09)',
   };
 
   const cardImageStyle = {
     width: '100%',
-    height: '200px',
+    height: '180px',
     objectFit: 'cover',
-    borderTopLeftRadius: '18px',
-    borderTopRightRadius: '18px',
+    borderTopLeftRadius: '16px',
+    borderTopRightRadius: '16px',
     boxShadow: '0 2px 12px rgba(46,125,50,0.07)',
   };
 
   const cardTitleStyle = {
-    fontSize: '1.35rem',
+    fontSize: 'clamp(1.1rem, 4vw, 1.3rem)',
     fontWeight: '700',
     color: '#2e7d32',
-    padding: '18px 12px 10px 12px',
+    padding: '15px 10px 8px 10px',
     textAlign: 'center',
     borderBottom: '1px solid #e8f5e9',
     margin: 0,
-    letterSpacing: '1px',
+    letterSpacing: '0.5px',
     fontFamily: "'Montserrat', 'Segoe UI', Arial, sans-serif",
+    wordWrap: 'break-word',
   };
 
   const cardContentStyle = {
-    padding: '18px 18px 0 18px',
+    padding: '15px 12px 0 12px',
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'column',
@@ -88,7 +97,7 @@ const BookPage = () => {
   };
 
   const featuresSectionStyle = {
-    marginBottom: '18px',
+    marginBottom: '15px',
   };
 
   const featuresListStyle = {
@@ -96,12 +105,12 @@ const BookPage = () => {
     padding: 0,
     margin: 0,
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: '8px 18px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+    gap: '6px 10px',
   };
 
   const featureItemStyle = {
-    fontSize: '1rem',
+    fontSize: '0.9rem',
     color: '#333',
     marginBottom: '0',
     display: 'flex',
@@ -112,67 +121,67 @@ const BookPage = () => {
 
   const checkIconStyle = {
     color: '#2e7d32',
-    marginRight: '8px',
-    fontSize: '1.1em',
+    marginRight: '6px',
+    fontSize: '1em',
     fontWeight: 'bold',
   };
 
   const infoIconStyle = {
     color: '#7cb342',
-    marginLeft: '5px',
-    fontSize: '0.9em',
+    marginLeft: '3px',
+    fontSize: '0.8em',
     cursor: 'pointer',
     opacity: 0.7,
   };
 
   const pricingAndCapacitySectionStyle = {
     textAlign: 'center',
-    padding: '18px 0 12px 0',
+    padding: '15px 0 10px 0',
     borderTop: '1px solid #e8f5e9',
     borderBottom: '1px solid #e8f5e9',
-    marginBottom: '15px',
+    marginBottom: '12px',
     background: 'rgba(232,245,233,0.13)',
     borderRadius: '8px',
   };
 
   const capacityIconStyle = {
-    fontSize: '1.5rem',
+    fontSize: '1.3rem',
     color: '#555',
-    marginBottom: '5px',
-    letterSpacing: '2px',
+    marginBottom: '3px',
+    letterSpacing: '1px',
   };
 
   const priceStyle = (isDiscounted) => ({
-    fontSize: '2.1rem',
+    fontSize: '1.8rem',
     fontWeight: 'bold',
     color: isDiscounted ? '#2e7d32' : '#2e7d32',
-    margin: '0 0 5px 0',
-    letterSpacing: '1px',
+    margin: '0 0 3px 0',
+    letterSpacing: '0.5px',
     fontFamily: "'Montserrat', 'Segoe UI', Arial, sans-serif",
   });
 
   const originalPriceStyle = {
     textDecoration: 'line-through',
     color: '#888',
-    fontSize: '1.1rem',
-    marginRight: '10px',
+    fontSize: '1rem',
+    marginRight: '8px',
     fontWeight: 500,
   };
 
   const discountPercentageStyle = {
     background: 'linear-gradient(90deg,#2e7d32 60%,#81c784 100%)',
     color: '#fff',
-    padding: '2px 8px',
+    padding: '2px 6px',
     borderRadius: '4px',
-    fontSize: '0.9rem',
+    fontSize: '0.8rem',
     fontWeight: 'bold',
-    marginLeft: '8px',
-    letterSpacing: '1px',
+    marginLeft: '6px',
+    letterSpacing: '0.5px',
     boxShadow: '0 1px 4px rgba(46,125,50,0.08)',
   };
 
   const priceNoteStyle = {
-    fontSize: '0.9rem',
+    fontSize: '0.8rem',
     color: '#888',
     marginTop: '2px',
     marginBottom: '2px',
@@ -181,20 +190,22 @@ const BookPage = () => {
   const cheapestTagStyle = {
     background: 'linear-gradient(90deg, #c8e6c9 60%, #a5d6a7 100%)',
     color: '#1b5e20',
-    padding: '4px 12px',
-    fontSize: '0.85rem',
+    padding: '4px 10px',
+    fontSize: '0.8rem',
     fontWeight: 'bold',
     borderRadius: '4px',
     display: 'inline-block',
-    marginBottom: '7px',
+    marginBottom: '5px',
     border: '1px solid #81c784',
-    letterSpacing: '1px',
+    letterSpacing: '0.5px',
     boxShadow: '0 1px 4px rgba(129,199,132,0.08)',
+    maxWidth: '90%',
+    whiteSpace: 'nowrap',
   };
 
   const bookingActionsStyle = {
     textAlign: 'center',
-    paddingTop: '10px',
+    paddingTop: '8px',
   };
 
   const bookNowButtonStyle = (isExceeded) => ({
@@ -202,53 +213,68 @@ const BookPage = () => {
       ? 'linear-gradient(90deg,#bdbdbd 60%,#e0e0e0 100%)'
       : 'linear-gradient(90deg,#43a047 60%,#66bb6a 100%)',
     color: '#fff',
-    padding: '14px 0',
+    padding: '12px 0',
     border: 'none',
     borderRadius: '7px',
-    fontSize: '1.08rem',
+    fontSize: '1rem',
     fontWeight: 'bold',
     cursor: isExceeded ? 'not-allowed' : 'pointer',
     textDecoration: 'none',
     display: 'block',
     width: '100%',
-    marginBottom: '8px',
+    marginBottom: '6px',
     transition: 'background 0.2s, transform 0.2s',
     boxShadow: isExceeded
       ? '0 2px 8px rgba(189,189,189,0.10)'
       : '0 2px 12px rgba(46,125,50,0.10)',
-    letterSpacing: '1px',
+    letterSpacing: '0.5px',
   });
 
   const availabilityNoteStyle = {
-    fontSize: '0.95rem',
+    fontSize: '0.9rem',
     color: '#c9302c',
     fontWeight: 'bold',
-    marginTop: '7px',
-    letterSpacing: '1px',
+    marginTop: '5px',
+    letterSpacing: '0.5px',
   };
 
   const capacityExceededStyle = {
     color: '#dc3545',
     fontWeight: 'bold',
-    fontSize: '1rem',
-    marginTop: '7px',
+    fontSize: '0.9rem',
+    marginTop: '5px',
     textAlign: 'center',
-    letterSpacing: '1px',
+    letterSpacing: '0.5px',
   };
 
   const quantitySelectorStyle = {
     border: '1.5px solid #81c784',
-    padding: '8px 12px',
-    fontSize: '1.08rem',
+    padding: '6px 10px',
+    fontSize: '1rem',
     textAlign: 'center',
     borderRadius: '6px',
-    width: '60px',
-    margin: '0 auto 10px auto',
+    width: '50px',
+    margin: '0 auto 8px auto',
     display: 'block',
     background: '#f8fafc',
     fontWeight: 'bold',
     color: '#2e7d32',
-    letterSpacing: '1px',
+    letterSpacing: '0.5px',
+  };
+
+  const footerNoteStyle = {
+    textAlign: 'center',
+    marginTop: '40px',
+    fontSize: '0.95rem',
+    color: '#444',
+    background: 'rgba(255,255,255,0.85)',
+    borderRadius: '12px',
+    padding: '15px 10px',
+    boxShadow: '0 2px 12px rgba(46,125,50,0.07)',
+    maxWidth: '90%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    border: '1px solid rgba(129,199,132,0.2)',
   };
 
   const bookingOptions = [
@@ -310,8 +336,7 @@ const BookPage = () => {
       discountPercentage: "-47%",
       priceNote: "Per night before taxes and fees",
       availability: "Our last 2 rooms!",
-      isExceeded: false, // Changed from true to false to enable this option
-      // Removed exceededMessage and guestsExceeded since it's now enabled
+      isExceeded: false,
     },
   ];
 
@@ -367,17 +392,18 @@ const BookPage = () => {
                 <div style={bookingActionsStyle}>
                   <div style={quantitySelectorStyle}>1</div>
                   {option.isExceeded && option.guestsExceeded && (
-                    <div style={{...capacityExceededStyle, fontSize: '0.9rem', marginBottom: '5px'}}>
+                    <div style={{...capacityExceededStyle, fontSize: '0.8rem', marginBottom: '5px'}}>
                       {option.guestsExceeded} ⓘ
                     </div>
                   )}
+                  
                   <a
                     href={option.isExceeded ? undefined : agodaLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={bookNowButtonStyle(option.isExceeded)}
                     onClick={(e) => option.isExceeded && e.preventDefault()}
-                    onMouseEnter={e => !option.isExceeded && (e.currentTarget.style.transform = 'scale(1.04)')}
+                    onMouseEnter={e => !option.isExceeded && (e.currentTarget.style.transform = 'scale(1.02)')}
                     onMouseLeave={e => !option.isExceeded && (e.currentTarget.style.transform = 'scale(1)')}
                   >
                     Book now
@@ -392,22 +418,9 @@ const BookPage = () => {
           </div>
         ))}
       </div>
-      <div style={{
-        textAlign: 'center',
-        marginTop: '48px',
-        fontSize: '1.05rem',
-        color: '#444',
-        background: 'rgba(255,255,255,0.85)',
-        borderRadius: '12px',
-        padding: '18px 12px',
-        boxShadow: '0 2px 12px rgba(46,125,50,0.07)',
-        maxWidth: '700px',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        border: '1px solid rgba(129,199,132,0.2)',
-      }}>
-        <p style={{marginBottom: '8px'}}>All bookings are processed securely through our partner Agoda. Prices and availability may vary.</p>
-        <p>For group bookings or special requests, please <a href="/contact" style={{ color: '#2e7d32', fontWeight: 'bold', textDecoration: 'underline' }}>contact us</a> directly.</p>
+      <div style={footerNoteStyle}>
+        <p style={{marginBottom: '8px', fontSize: '0.9rem'}}>All bookings are processed securely through our partner Agoda. Prices and availability may vary.</p>
+        <p style={{fontSize: '0.9rem', margin: 0}}>For group bookings or special requests, please <a href="/contact" style={{ color: '#2e7d32', fontWeight: 'bold', textDecoration: 'underline' }}>contact us</a> directly.</p>
       </div>
     </div>
   );
